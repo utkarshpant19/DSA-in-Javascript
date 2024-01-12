@@ -2,29 +2,23 @@
 
 const validParanthesis = (str)=>{
 
-    let obj = {};
+
+    let OB_needed = 0, CB_needed = 0;
 
     for(let i =0; i<str.length; i++){
-        if(str[i] == '(' && str[i+1] == ')'){
-            i = i+2;
-            continue;
+
+        if(str[i] == '('){
+            CB_needed++;
         }
-
-        obj[str[i]] = obj[str[i]] + 1 || 1;
-    }
-
-    console.log(obj);
-    let open = 0, close = 0;
-
-    for(let key in obj){
-        if(key == '('){
-            open = obj[key];
+        else if(CB_needed > 0){
+            CB_needed--;
         }
         else
-        close = obj[key];
+        OB_needed++;
     }
 
-    return Math.abs(open -close);
+    return OB_needed + CB_needed;
+
 }
 
 console.log(validParanthesis("()))(("));
