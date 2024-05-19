@@ -19,5 +19,9 @@ var maxSlidingWindow = function(nums, k) {
     
 };
 
+let maxSlidingWindowOptimized = (nums, k)=>{
+
+}
+
 let arr = [1,-1];
-console.log(maxSlidingWindow(arr, 1));
+console.log(maxSlidingWindowOptimized(arr, 1));
